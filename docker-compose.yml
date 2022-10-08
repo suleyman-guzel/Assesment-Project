@@ -1,0 +1,86 @@
+version: '3.4'
+
+services:
+  contact_microservice:
+    image: ${DOCKER_REGISTRY-}contactmicroservice
+    build:
+      context: .
+      dockerfile: Contact_Microservice/Dockerfile
+    ports:
+      - 5000:80
+    networks:
+      - dockerapi-dev
+  reportmicroservice:
+    image: ${DOCKER_REGISTRY-}reporttmicroservice
+    build:
+      context: .
+      dockerfile: ReportMicroservice/Dockerfile
+    ports:
+      - 5001:80
+    networks:
+      - dockerapi-dev
+
+  #dbcontact:
+  #  image: postgres:lastes
+  #  restart: always
+  #  environment:
+  #    POSTGRES_USER: postgres
+  #    POSTGRES_PASSWORD: postgres
+  #    POSTGRES_DB: contactdb
+  #  ports:
+  #    - '5432:5432'
+  #  volumes: 
+  #    - dbcontact:/var/lib/postgresql/data      
+  #  networks:
+  #    - dockerapi-dev
+
+  dbcontact:
+    networks:
+      - dockerapi-dev
+    container_name: pg_container
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=contactdb
+      - PGDATA= /data/postgres 
+    ports:
+      - "6543:5432" 
+    restart: always 
+
+  pgadmin:
+    networks:
+      - dockerapi-dev
+    platform: linux/amd64
+    container_name: pgadmin_container
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=pgadmin4@pgadmin.org
+      - PGADMIN_DEFAULT_PASSWORD=admin1234 
+    ports:
+      - "5051:80" 
+    restart: always
+    depends_on:
+      - dbcontact
+
+  #dbreport:
+  #  image: postgres:lastes
+  #  restart: always
+  #  environment:
+  #    POSTGRES_USER: postgres
+  #    POSTGRES_PASSWORD: postgres
+  #    POSTGRES_DB: reportdb
+  #  ports:
+  #    - '5432:5432'
+  #  #volumes: 
+  #  #  - dbreport:/var/lib/postgresql/data      
+  #  networks:
+  #    - dockerapi-dev 
+
+networks:
+  dockerapi-dev:
+    driver: bridge
+volumes:
+  dbcontact:
+#  dbreport:
+  

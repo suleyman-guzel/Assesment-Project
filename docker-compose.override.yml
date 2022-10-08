@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  contact_microservice:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+  reportmicroservice:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
