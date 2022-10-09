@@ -28,6 +28,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\CoreLibrary\CoreLibrary.csproj" />
+    <ProjectReference Include="..\CoreLibrary\CoreLibrary.csproj" />
   </ItemGroup>
 
   <ItemGroup>
