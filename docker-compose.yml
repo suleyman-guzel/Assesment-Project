@@ -20,20 +20,6 @@ services:
     networks:
       - dockerapi-dev
 
-  #dbcontact:
-  #  image: postgres:lastes
-  #  restart: always
-  #  environment:
-  #    POSTGRES_USER: postgres
-  #    POSTGRES_PASSWORD: postgres
-  #    POSTGRES_DB: contactdb
-  #  ports:
-  #    - '5432:5432'
-  #  volumes: 
-  #    - dbcontact:/var/lib/postgresql/data      
-  #  networks:
-  #    - dockerapi-dev
-
   dbcontact:
     networks:
       - dockerapi-dev
@@ -63,19 +49,18 @@ services:
     depends_on:
       - dbcontact
 
-  #dbreport:
-  #  image: postgres:lastes
-  #  restart: always
-  #  environment:
-  #    POSTGRES_USER: postgres
-  #    POSTGRES_PASSWORD: postgres
-  #    POSTGRES_DB: reportdb
-  #  ports:
-  #    - '5432:5432'
-  #  #volumes: 
-  #  #  - dbreport:/var/lib/postgresql/data      
-  #  networks:
-  #    - dockerapi-dev 
+  rabbitmq:
+    networks:
+      - dockerapi-dev
+    platform: linux/amd64
+    image: rabbitmq:3-management
+    hostname: "rabbitmq"
+    environment: 
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    ports:
+      - 5672:5672
+      - 15672:15672
 
 networks:
   dockerapi-dev:
