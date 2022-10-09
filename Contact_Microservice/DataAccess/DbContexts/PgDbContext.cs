@@ -27,14 +27,18 @@ namespace Contact_Microservice.DataAccess.DbContexts
             var UUID = Guid.NewGuid();         
             modelBuilder.Entity<Person>().HasData(new Person {Company="Sanatcı a.ş",Name="Levent", SurName="Yüksel",Id= UUID});
             modelBuilder.Entity<Contact>().HasData(new Contact { Id = Guid.NewGuid(), ContactType = (int)ContactType.Location, PersonUID = UUID, Contents = "antalya" });
+            modelBuilder.Entity<Contact>().HasData(new Contact { Id = Guid.NewGuid(), ContactType = (int)ContactType.Phone, PersonUID = UUID, Contents = "05414414444" });
 
             var UUID1 = Guid.NewGuid();
             modelBuilder.Entity<Person>().HasData(new Person { Company = "Futbol a.ş", Name = "Burak", SurName = "Yılmaz", Id = UUID1 });
             modelBuilder.Entity<Contact>().HasData(new Contact { Id = Guid.NewGuid(), ContactType = (int)ContactType.Location, PersonUID = UUID1, Contents = "antalya" });
+            modelBuilder.Entity<Contact>().HasData(new Contact { Id = Guid.NewGuid(), ContactType = (int)ContactType.Phone, PersonUID = UUID1, Contents = "05414414444" });
+            modelBuilder.Entity<Contact>().HasData(new Contact { Id = Guid.NewGuid(), ContactType = (int)ContactType.Phone, PersonUID = UUID1, Contents = "05415555555" });
 
             var UUID2 = Guid.NewGuid();
             modelBuilder.Entity<Person>().HasData(new Person { Company = "Oyuncu a.ş", Name = "Mehmet", SurName = "Özgür", Id = UUID2 });
             modelBuilder.Entity<Contact>().HasData(new Contact { Id = Guid.NewGuid(), ContactType = (int)ContactType.Location, PersonUID = UUID2, Contents = "antalya" });
+            modelBuilder.Entity<Contact>().HasData(new Contact { Id = Guid.NewGuid(), ContactType = (int)ContactType.Phone, PersonUID = UUID2, Contents = "05415552233" });
 
 
 
@@ -43,10 +47,12 @@ namespace Contact_Microservice.DataAccess.DbContexts
             var UUID3 = Guid.NewGuid();
             modelBuilder.Entity<Person>().HasData(new Person { Company = "Oyuncu a.ş", Name = "Elçin", SurName = "Sangu", Id = UUID3 });
             modelBuilder.Entity<Contact>().HasData(new Contact { Id = Guid.NewGuid(), ContactType = (int)ContactType.Location, PersonUID = UUID3, Contents = "izmir" });
+            modelBuilder.Entity<Contact>().HasData(new Contact { Id = Guid.NewGuid(), ContactType = (int)ContactType.Phone, PersonUID = UUID3, Contents = "05411112233" });
 
             var UUID4 = Guid.NewGuid();
             modelBuilder.Entity<Person>().HasData(new Person { Company = "Oyuncu a.ş", Name = "Selin", SurName = "Şekerci", Id = UUID4 });
             modelBuilder.Entity<Contact>().HasData(new Contact { Id = Guid.NewGuid(), ContactType = (int)ContactType.Location, PersonUID = UUID4, Contents = "izmir" });
+            modelBuilder.Entity<Contact>().HasData(new Contact { Id = Guid.NewGuid(), ContactType = (int)ContactType.Phone, PersonUID = UUID4, Contents = "05413332211" });
 
             var UUID5 = Guid.NewGuid();
             modelBuilder.Entity<Person>().HasData(new Person { Company = "Oyuncu a.ş", Name = "Ece", SurName = "Uslu", Id = UUID5 });
@@ -59,6 +65,7 @@ namespace Contact_Microservice.DataAccess.DbContexts
             var UUID6 = Guid.NewGuid();
             modelBuilder.Entity<Person>().HasData(new Person { Company = "Şarkıcı a.ş", Name = "İbrahim", SurName = "Tatlıses", Id = UUID6 });
             modelBuilder.Entity<Contact>().HasData(new Contact { Id = Guid.NewGuid(), ContactType = (int)ContactType.Location, PersonUID = UUID6, Contents = "urfa" });
+            modelBuilder.Entity<Contact>().HasData(new Contact { Id = Guid.NewGuid(), ContactType = (int)ContactType.Phone, PersonUID = UUID6, Contents = "05417778899" });
 
             var UUID7 = Guid.NewGuid();
             modelBuilder.Entity<Person>().HasData(new Person { Company = "Şarkıcı a.ş", Name = "Müslüm", SurName = "Gürses", Id = UUID7 });

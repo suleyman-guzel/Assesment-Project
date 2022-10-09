@@ -17,13 +17,12 @@ namespace ReportMicroservice.Business.Consumers
         private IConnection _connection;
         private readonly RabbitMqSettings QueueSetting;
         private readonly IMediator _mediator;
-        private readonly IReportRepository _reportRepository;
 
         public ConsumeRabbitMQHostedService(IConfiguration configuration,IMediator mediator)
         {
             var _Configuration = configuration;
             QueueSetting = _Configuration.GetSection("RabbitMqOptions").Get<RabbitMqSettings>();
-            _mediator = mediator;            
+            _mediator = mediator;    
             InitRabbitMQ();
         }
 
@@ -51,7 +50,6 @@ namespace ReportMicroservice.Business.Consumers
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
             stoppingToken.ThrowIfCancellationRequested();
-
             var consumer = new EventingBasicConsumer(_channel);
             consumer.Received += (ch, ea) =>
             {

@@ -15,7 +15,6 @@ namespace ReportMicroservice.Migrations
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     ReportUrl = table.Column<string>(type: "text", nullable: true),
-                    Parameter = table.Column<string>(type: "text", nullable: false),
                     CreateDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     State = table.Column<int>(type: "integer", nullable: false)
                 },

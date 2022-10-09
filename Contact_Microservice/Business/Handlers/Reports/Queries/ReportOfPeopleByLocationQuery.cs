@@ -1,15 +1,14 @@
 ﻿using Contact_Microservice.DataAccess.Abstract;
 using Contact_Microservice.Entities;
+using CoreLibrary.Entities;
 using CoreLibrary.Utilities;
 using MediatR;
 
 namespace Contact_Microservice.Business.Handlers.Reports.Queries
 {
-    public class ReportOfPeopleByLocationQuery:IRequest<ApiDataResult<IEnumerable<Person>>>
-    {
-        public string Location { get; set; }
-
-        public class ReportOfPeopleByLocationQueryHandler : IRequestHandler<ReportOfPeopleByLocationQuery, ApiDataResult<IEnumerable<Person>>>
+    public class ReportOfPeopleByLocationQuery:IRequest<ApiDataResult<IEnumerable<ReportOfLocation>>>
+    {        
+        public class ReportOfPeopleByLocationQueryHandler : IRequestHandler<ReportOfPeopleByLocationQuery, ApiDataResult<IEnumerable<ReportOfLocation>>>
         {
             private readonly IPersonRepository _personRepository;
             private readonly IMediator _mediator;
@@ -20,16 +19,30 @@ namespace Contact_Microservice.Business.Handlers.Reports.Queries
                 _mediator = mediator;
             }
 
-            public async Task<ApiDataResult<IEnumerable<Person>>> Handle(ReportOfPeopleByLocationQuery request, CancellationToken cancellationToken)
+            public async Task<ApiDataResult<IEnumerable<ReportOfLocation>>> Handle(ReportOfPeopleByLocationQuery request, CancellationToken cancellationToken)
             {
                 try
                 {
-                    var personList = await _personRepository.GetListAsync(x => x.Contacts.Any(x => x.ContactType == 3 && x.Contents == request.Location));
-                    return new ApiDataResult<IEnumerable<Person>>("Success", personList, true);
+                    var personList = await _personRepository.GetListAsync();
+                    var contactList = personList.SelectMany(x => x.Contacts);
+                    var location = contactList.Where(x => x.ContactType == (int)ContactType.Location).Select(x => x.Contents).Distinct().ToList();
+                    ReportOfLocation reportoflocation;
+                    List<ReportOfLocation> reportOfLocationList = new List<ReportOfLocation>();
+                    foreach (var item in location)
+                    {
+                        reportoflocation = new ReportOfLocation();
+                        reportoflocation.Location = item;
+                        reportoflocation.PersonCount = personList.Count(x => x.Contacts.Any(y => y.ContactType == (int)ContactType.Location && y.Contents == item));
+                        reportoflocation.PhoneCount = personList.Count(x => x.Contacts.Any(y => y.ContactType == (int)ContactType.Location && y.Contents == item)
+                        && x.Contacts.Any(y =>y.ContactType == (int)ContactType.Phone));
+                        reportOfLocationList.Add(reportoflocation);
+                    }
+
+                    return new ApiDataResult<IEnumerable<ReportOfLocation>>("Success", reportOfLocationList, true);
                 }
                 catch (Exception ex)
                 {
-                    return new ApiDataResult<IEnumerable<Person>>(false,"Error",ex.Message);
+                    return new ApiDataResult<IEnumerable<ReportOfLocation>>(false,"Error",ex.Message);
                 }
             }
         }

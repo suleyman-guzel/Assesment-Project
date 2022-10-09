@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Contact_Microservice.Migrations
 {
     [DbContext(typeof(PgDbContext))]
-    [Migration("20221009165321_contactpg_init")]
+    [Migration("20221009192615_contactpg_init")]
     partial class contactpg_init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -49,66 +49,115 @@ namespace Contact_Microservice.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("ed8eebe4-c077-463a-b0a8-1a744465c065"),
+                            Id = new Guid("ca32f3b0-3fe9-40ef-939f-14c9c403e8c0"),
                             ContactType = 3,
                             Contents = "antalya",
-                            PersonUID = new Guid("866c2580-7505-417e-8b2d-89be6d304335")
+                            PersonUID = new Guid("e2f7b429-aa1d-4136-b412-523dce964993")
                         },
                         new
                         {
-                            Id = new Guid("39192dbb-e8d1-4f61-abe1-5fa536704770"),
+                            Id = new Guid("f7f4936f-a3d3-4c2e-8dd9-27e18d471218"),
+                            ContactType = 1,
+                            Contents = "05414414444",
+                            PersonUID = new Guid("e2f7b429-aa1d-4136-b412-523dce964993")
+                        },
+                        new
+                        {
+                            Id = new Guid("896233ef-6883-4bcc-8210-1d8a0454ffba"),
                             ContactType = 3,
                             Contents = "antalya",
-                            PersonUID = new Guid("b58041ac-5714-4c93-98d5-a981f4754eed")
+                            PersonUID = new Guid("0cb78979-5935-4793-be77-3aae7cdc7c4a")
                         },
                         new
                         {
-                            Id = new Guid("6fab9285-ecf3-400a-8bef-f3ddf83b1f5c"),
+                            Id = new Guid("d4bef437-2fd6-4d8a-bf86-d2d276c68139"),
+                            ContactType = 1,
+                            Contents = "05414414444",
+                            PersonUID = new Guid("0cb78979-5935-4793-be77-3aae7cdc7c4a")
+                        },
+                        new
+                        {
+                            Id = new Guid("5a087447-cb5f-41f9-a621-29a39c499d84"),
+                            ContactType = 1,
+                            Contents = "05415555555",
+                            PersonUID = new Guid("0cb78979-5935-4793-be77-3aae7cdc7c4a")
+                        },
+                        new
+                        {
+                            Id = new Guid("caa57e29-cde4-491f-b221-60a016e6de99"),
                             ContactType = 3,
                             Contents = "antalya",
-                            PersonUID = new Guid("c7c24bf5-1097-4825-90c1-2f4233a3a2ce")
+                            PersonUID = new Guid("3874e9c0-8a55-49db-9c0f-88ce17372086")
                         },
                         new
                         {
-                            Id = new Guid("144fa168-5c07-46c1-a4ad-6890a99df997"),
+                            Id = new Guid("fd5df557-6d12-48c1-9a93-fa195e14548a"),
+                            ContactType = 1,
+                            Contents = "05415552233",
+                            PersonUID = new Guid("3874e9c0-8a55-49db-9c0f-88ce17372086")
+                        },
+                        new
+                        {
+                            Id = new Guid("a31aca8d-272f-4066-8f81-c6eb59af1705"),
                             ContactType = 3,
                             Contents = "izmir",
-                            PersonUID = new Guid("c026ed21-910a-4c55-9135-41a20e65dc07")
+                            PersonUID = new Guid("24fb9dd1-9ca7-4bed-a95b-1dae06d4a4bb")
                         },
                         new
                         {
-                            Id = new Guid("2abae796-fd5b-49b7-aa19-7311f4f1c2de"),
+                            Id = new Guid("a27d7023-d9a5-4b7e-b1d3-b51b855cb0f3"),
+                            ContactType = 1,
+                            Contents = "05411112233",
+                            PersonUID = new Guid("24fb9dd1-9ca7-4bed-a95b-1dae06d4a4bb")
+                        },
+                        new
+                        {
+                            Id = new Guid("16551247-f3b5-4418-aa90-c41d8759ee33"),
                             ContactType = 3,
                             Contents = "izmir",
-                            PersonUID = new Guid("023e1635-8be6-45cc-ad7d-2800a3b679bc")
+                            PersonUID = new Guid("9f17228d-020a-4a38-a2d3-8793625f79a6")
                         },
                         new
                         {
-                            Id = new Guid("aa6da8ad-df16-4a59-a3f0-c215e1ef238a"),
+                            Id = new Guid("7207209e-3af0-419b-813f-8508ad5c5147"),
+                            ContactType = 1,
+                            Contents = "05413332211",
+                            PersonUID = new Guid("9f17228d-020a-4a38-a2d3-8793625f79a6")
+                        },
+                        new
+                        {
+                            Id = new Guid("39deb96f-c6d2-455a-9357-54084b384983"),
                             ContactType = 3,
                             Contents = "izmir",
-                            PersonUID = new Guid("550ac5d8-5c79-4ab7-ad05-38f2ae7916b0")
+                            PersonUID = new Guid("2b513153-af53-4257-926f-860cb14d6813")
                         },
                         new
                         {
-                            Id = new Guid("22304ec0-794e-439b-9550-cd2a9f5afd0d"),
+                            Id = new Guid("b61022c3-0ad2-45d7-88e4-dd0ec68d44bd"),
                             ContactType = 3,
                             Contents = "urfa",
-                            PersonUID = new Guid("bdc3f868-7ed1-4db0-ae35-9a7283bc26ce")
+                            PersonUID = new Guid("c80cbe29-d732-4fae-b6c2-b73ad8334faf")
                         },
                         new
                         {
-                            Id = new Guid("80065b7f-b588-4b0e-92f3-fe9c91af2b39"),
-                            ContactType = 3,
-                            Contents = "urfa",
-                            PersonUID = new Guid("1f410483-38c3-48df-9a99-76dbb2bf0d1a")
+                            Id = new Guid("0dd5d6e5-1c40-4eff-8ff0-f35a82d83ac5"),
+                            ContactType = 1,
+                            Contents = "05417778899",
+                            PersonUID = new Guid("c80cbe29-d732-4fae-b6c2-b73ad8334faf")
                         },
                         new
                         {
-                            Id = new Guid("7e6fd57c-4608-4f0a-a44a-92280b2ce3be"),
+                            Id = new Guid("64253f97-69b0-4cd3-bcc4-378fbb0f4955"),
                             ContactType = 3,
                             Contents = "urfa",
-                            PersonUID = new Guid("409ba2b3-10a4-44eb-9193-f43d777b1e30")
+                            PersonUID = new Guid("79a1e27a-629a-474e-bbcb-362274b65104")
+                        },
+                        new
+                        {
+                            Id = new Guid("af20dc4e-1d0c-4c56-9a97-779a25574acb"),
+                            ContactType = 3,
+                            Contents = "urfa",
+                            PersonUID = new Guid("4e5a3699-ee36-444c-a203-50248a448d21")
                         });
                 });
 
@@ -137,63 +186,63 @@ namespace Contact_Microservice.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("866c2580-7505-417e-8b2d-89be6d304335"),
+                            Id = new Guid("e2f7b429-aa1d-4136-b412-523dce964993"),
                             Company = "Sanatcı a.ş",
                             Name = "Levent",
                             SurName = "Yüksel"
                         },
                         new
                         {
-                            Id = new Guid("b58041ac-5714-4c93-98d5-a981f4754eed"),
+                            Id = new Guid("0cb78979-5935-4793-be77-3aae7cdc7c4a"),
                             Company = "Futbol a.ş",
                             Name = "Burak",
                             SurName = "Yılmaz"
                         },
                         new
                         {
-                            Id = new Guid("c7c24bf5-1097-4825-90c1-2f4233a3a2ce"),
+                            Id = new Guid("3874e9c0-8a55-49db-9c0f-88ce17372086"),
                             Company = "Oyuncu a.ş",
                             Name = "Mehmet",
                             SurName = "Özgür"
                         },
                         new
                         {
-                            Id = new Guid("c026ed21-910a-4c55-9135-41a20e65dc07"),
+                            Id = new Guid("24fb9dd1-9ca7-4bed-a95b-1dae06d4a4bb"),
                             Company = "Oyuncu a.ş",
                             Name = "Elçin",
                             SurName = "Sangu"
                         },
                         new
                         {
-                            Id = new Guid("023e1635-8be6-45cc-ad7d-2800a3b679bc"),
+                            Id = new Guid("9f17228d-020a-4a38-a2d3-8793625f79a6"),
                             Company = "Oyuncu a.ş",
                             Name = "Selin",
                             SurName = "Şekerci"
                         },
                         new
                         {
-                            Id = new Guid("550ac5d8-5c79-4ab7-ad05-38f2ae7916b0"),
+                            Id = new Guid("2b513153-af53-4257-926f-860cb14d6813"),
                             Company = "Oyuncu a.ş",
                             Name = "Ece",
                             SurName = "Uslu"
                         },
                         new
                         {
-                            Id = new Guid("bdc3f868-7ed1-4db0-ae35-9a7283bc26ce"),
+                            Id = new Guid("c80cbe29-d732-4fae-b6c2-b73ad8334faf"),
                             Company = "Şarkıcı a.ş",
                             Name = "İbrahim",
                             SurName = "Tatlıses"
                         },
                         new
                         {
-                            Id = new Guid("1f410483-38c3-48df-9a99-76dbb2bf0d1a"),
+                            Id = new Guid("79a1e27a-629a-474e-bbcb-362274b65104"),
                             Company = "Şarkıcı a.ş",
                             Name = "Müslüm",
                             SurName = "Gürses"
                         },
                         new
                         {
-                            Id = new Guid("409ba2b3-10a4-44eb-9193-f43d777b1e30"),
+                            Id = new Guid("4e5a3699-ee36-444c-a203-50248a448d21"),
                             Company = "Şarkıcı a.ş",
                             Name = "Mahmut",
                             SurName = "Tuncer"

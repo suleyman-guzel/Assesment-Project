@@ -8,8 +8,7 @@ using RestSharp;
 namespace ReportMicroservice.Business.Handlers.Reports.Queries
 {
     public class ReportOfPeopleByLocationReportQuery : IRequest<ApiDataResult<Report>>
-    {
-        public string Location { get; set; }
+    {      
 
         public class ReportOfPeopleByLocationReportQueryHandler : IRequestHandler<ReportOfPeopleByLocationReportQuery, ApiDataResult<Report>>
         {
@@ -27,7 +26,7 @@ namespace ReportMicroservice.Business.Handlers.Reports.Queries
             {
                 try
                 {
-                    Report _report = new Report { CreateDate = DateTime.Now, Id = Guid.NewGuid(), State = ReportState.Hazırlanıyor, Parameter = request.Location };
+                    Report _report = new Report { CreateDate = DateTime.Now, Id = Guid.NewGuid(), State = ReportState.Hazırlanıyor };
                     _report = _reportRepository.Add(_report);
                     await _reportRepository.SaveChangesAsync();
                     _rabbitMq.MessagePublishObject<Report>(_report, "ReportOfPeopleByLocation");

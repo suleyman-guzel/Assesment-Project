@@ -1,6 +1,7 @@
 using System.Reflection;
 using System.Text;
 using CoreLibrary.Handlers.Consumers;
+using CoreLibrary.Utilities.Converters.ToExcel;
 using CoreLibrary.Utilities.MessageBrokers;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -24,7 +25,7 @@ builder.Services.AddTransient<IReportRepository, ReportRepository>();
 builder.Services.AddTransient<IMessageBroker, RabbitMqHelper>();
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 builder.Services.AddHostedService<ConsumeRabbitMQHostedService>();
-
+builder.Services.AddScoped<ToExcelConverter>();
 
 var context = builder.Services.BuildServiceProvider().GetService<PgDbContext>();
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);

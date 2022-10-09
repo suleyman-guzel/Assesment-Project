@@ -31,10 +31,6 @@ namespace ReportMicroservice.Migrations
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<string>("Parameter")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<string>("ReportUrl")
                         .HasColumnType("text");
 

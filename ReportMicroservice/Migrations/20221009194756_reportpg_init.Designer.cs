@@ -12,7 +12,7 @@ using ReportMicroservice.DataAccess.DbContexts;
 namespace ReportMicroservice.Migrations
 {
     [DbContext(typeof(PgDbContext))]
-    [Migration("20221009154701_reportpg_init")]
+    [Migration("20221009194756_reportpg_init")]
     partial class reportpg_init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,10 +32,6 @@ namespace ReportMicroservice.Migrations
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("Parameter")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.Property<string>("ReportUrl")
                         .HasColumnType("text");

@@ -28,8 +28,7 @@ namespace Contact_Microservice.Business.Handlers.Persons.Commands
                 catch (Exception ex)
                 {
                     return new ApiDataResult<bool>(false, "Error", ex.Message);                
-                }
-                
+                }                
             }
         }
     }
