@@ -1,11 +1,11 @@
 
 proje 2 microservice den oluşmaktadır
- 1. ContactMicroservice
+ 1. ContactMicroservice localhost:5000
     vertabanı : Postgresql contactdb
     açıklama: Proje üzerinden kişi ekleme,silme işlemleri yapılabilinir, Proje içerisinde varolan kişilerin üzerine iletişim bilgileri eklenip silinebilinir.
     propje üzerinden tüm kişiler listelenebilinir
 
- 2. ReportMicroservice
+ 2. ReportMicroservice localhost:5001
     veritabanı: Postgresql reportdb
     açıklama: Proje üzerinden rapor isteği yapılır ve bu istek kaydedilip uygun zamanda işlenmek üzere messagebroker a iletilir. Proje messagebrokerdan isteği alır ve ContactMicroservice 
     den gerekli dataları çekip excel dosyasına kayıt eder. Rapor isteğin yerine getirildiği şeklinde işaretlenir ve rapora excel dosyasının path i eklenir.
