@@ -1,9 +1,9 @@
 
 proje 2 microservice den oluşmaktadır
  1. ContactMicroservice localhost:5000
-    vertabanı : Postgresql contactdb
-    açıklama: Proje üzerinden kişi ekleme,silme işlemleri yapılabilinir, Proje içerisinde varolan kişilerin üzerine iletişim bilgileri eklenip silinebilinir.
-    propje üzerinden tüm kişiler listelenebilinir
+   vertabanı : Postgresql contactdb
+   açıklama: Proje üzerinden kişi ekleme,silme işlemleri yapılabilinir, Proje içerisinde varolan kişilerin üzerine iletişim bilgileri eklenip silinebilinir.
+   propje üzerinden tüm kişiler listelenebilinir
 
  2. ReportMicroservice localhost:5001
     veritabanı: Postgresql reportdb
