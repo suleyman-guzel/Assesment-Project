@@ -27,3 +27,7 @@ proje 2 microservice den oluşmaktadır
    Phone = 1,
    Email = 2,
    Location = 3
+   
+   ![report_diagram](https://user-images.githubusercontent.com/23095498/195560966-a4a53b7d-1423-422e-8362-9b1dbc0fd469.jpg)
+
+   
