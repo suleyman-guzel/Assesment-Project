@@ -32,7 +32,7 @@ namespace ReportMicroservice_Test
             _reportRepository.Setup(x => x.GetListAsync(It.IsAny<Expression<Func<Report, bool>>>()))
                 .ReturnsAsync(new List<Report>
                 {
-                    new () { State = ReportState.Tamamlandý,ReportUrl ="" }
+                    new () { State = ReportState.Complated,ReportUrl ="" }
                     
                 });
 

@@ -39,7 +39,7 @@ namespace ReportMicroservice.Business.Handlers.Reports.Commands
 
                     var report = _reportRepository.Get(x => x.Id == request.Report.Id);
                     report.ReportUrl = fullpath;
-                    report.State = ReportState.Tamamlandı;
+                    report.State = ReportState.Complated;
                     _reportRepository.Update(report);
                     await _reportRepository.SaveChangesAsync();
                 }

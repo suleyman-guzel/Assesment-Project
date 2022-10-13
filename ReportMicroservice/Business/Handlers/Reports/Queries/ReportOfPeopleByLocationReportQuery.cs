@@ -27,7 +27,7 @@ namespace ReportMicroservice.Business.Handlers.Reports.Queries
             {
                 try
                 {
-                    Report _report = new Report { CreateDate = DateTime.Now, Id = Guid.NewGuid(), State = ReportState.Hazırlanıyor };
+                    Report _report = new Report { CreateDate = DateTime.Now, Id = Guid.NewGuid(), State = ReportState.Pending };
                     _report = _reportRepository.Add(_report);
                     await _reportRepository.SaveChangesAsync();
                     _rabbitMq.MessagePublishObject<Report>(_report, "ReportOfPeopleByLocation");

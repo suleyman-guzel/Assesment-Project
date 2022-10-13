@@ -2,7 +2,7 @@
 {
     public enum ReportState
     {
-        Hazırlanıyor = 1,
-        Tamamlandı = 2
+        Pending = 1,
+        Complated = 2
     }
 }
