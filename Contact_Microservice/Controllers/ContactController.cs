@@ -22,7 +22,7 @@ namespace Contact_Microservice.Controllers
 
 
         [Produces("application/json", "text/plain")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(bool))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ApiDataResult<bool>))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
         [HttpPost("deletecontact")]
         public async Task<IActionResult> DeleteContactToPerson([FromBody] DeleteContactCommand cd)
